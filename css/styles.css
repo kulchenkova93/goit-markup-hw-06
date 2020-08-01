@@ -98,6 +98,9 @@ color: #757575 цвет вторичного текста
   line-height: 1.2;
 }
 
+.header-portfolio {
+  border-bottom: 1px solid #ececec;
+}
 /*Site-nav*/
 .main-nav {
   display: flex;
@@ -344,26 +347,19 @@ color: #757575 цвет вторичного текста
   color: #757575;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.order-input:not(:placeholder-shown) ~ .order-label,
-.form-wraper:focus .order-label,
-.form-wraper:hover .order-label {
-  transform: translateY(-40px) translateX(-10px);
-  color: var(--accent-color);
-  fill: var(--accent-color);
+
+.form-wraper input:focus {
+  border-color: var(--accent-color);
+  outline: none;
 }
 
-.form-wraper:hover .order-icon,
-.form-wraper:focus .order-icon,
-.order-input:not(:placeholder-shown) .order-icon {
-  fill: var(--accent-color);
-}
 .form-wraper .order-icon {
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
   fill: #212121;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -384,9 +380,6 @@ color: #757575 цвет вторичного текста
   height: 18px;
   transition: 250ms fill cubic-bezier(0.4, 0, 0.2, 1);
 }
-.order-input:focus ~ .form-icon {
-  fill: var(--accent-color);
-}
 
 .comment-wraper {
   position: relative;
@@ -401,25 +394,86 @@ color: #757575 цвет вторичного текста
   margin-bottom: 20px;
   outline: none;
 }
-.comment-label {
-  position: absolute;
-  transform: translateX(-430px) translateY(12px);
-  font-family: Roboto;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  color: #757575;
-  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+.fform-wraper textarea {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-top: 12px;
+  /*padding: 12px 16px;*/
+  outline: none;
+  transition: 250ms color cubic-bezier(0.4, 0, 0.2, 1),
+    250ms border-color cubic-bezier(0.4, 0, 0.2, 1);
 }
-.comment-wraper:focus input,
-.comment-wraper:hover input {
-  border: 1px solid var(--accent-color);
-}
-.comment-wraper:focus .comment-label,
-.comment-wraper:hover .comment-label {
+.order-input:focus + .order-label .texterea,
+.order-input:not(:placeholder-shown) + .order-label .texterea {
   color: var(--accent-color);
-  transform: translateX(-440px) translateY(-20px);
+  transform: translateY(-45px) scale(0.9);
 }
+
+.order-input:focus + .order-label,
+.order-input:not(:placeholder-shown) + .order-label {
+  color: var(--accent-color);
+  transform: translate(-26px, -45px) scale(0.9);
+}
+.texterea {
+  top: 20px;
+  left: 16px;
+}
+textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.order-input:focus ~ .order-icon {
+  fill: var(--accent-color);
+}
+
+/* Textarea */
+
+.form-data-comment {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-label-2 {
+  transform: translateY(0);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  position: absolute;
+  top: 12px;
+  left: 16px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+}
+
+.wishes {
+  resize: none;
+
+  width: 448px;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.wishes:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.wishes:focus + .form-label-2,
+.wishes:not(:placeholder-shown) + .form-label-2 {
+  color: var(--accent-color);
+  transform: translateY(-30px);
+}
+
+/* Checkbox */
+
 .policy-checkbox {
   position: absolute;
   -webkit-appearance: none;
@@ -468,6 +522,7 @@ color: #757575 цвет вторичного текста
   font-weight: bold;
   font-size: 16px;
   line-height: 30px;
+  outline: none;
   color: var(--white-color);
   padding: 10px 55px;
   background-color: var(--accent-color);
@@ -483,6 +538,7 @@ color: #757575 цвет вторичного текста
   color: var(--accent-color);
   justify-content: center;
 }
+
 /*advantages*/
 .hide-title {
   display: none;
@@ -952,6 +1008,7 @@ color: #757575 цвет вторичного текста
   padding-left: 16px;
   background: #2f303a;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.6);
   box-sizing: border-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
